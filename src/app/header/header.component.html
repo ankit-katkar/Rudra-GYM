@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="">
+                </div>
+                <div class="nav-menu">
+                <input type="checkbox" id="check">
+                <label for="check">
+                    <fa-icon [icon]="faBars" id="btn"></fa-icon>
+                </label>
+                <ul>
+                    <label for="check">
+                        <fa-icon [icon]="faXmark" id="cancle"></fa-icon> 
+                    </label>
+                    <li><a routerLink="/">HOME</a></li>
+                    <li><a routerLink="/about-us"  routerLinkActive="active" >ABOUT US</a></li>
+                    <li><a routerLink="/our-services">SERVICES</a></li>
+                    <li><a routerLink="/our-team">OUR TEAM</a></li>
+                    <li><a routerLink="/products">PRODUCTS</a></li>   
+                    <li><a routerLink="/contact-us">CONTACT US</a></li>
+                </ul>
+                </div>
+        </div>
+    </nav>
+</div>
