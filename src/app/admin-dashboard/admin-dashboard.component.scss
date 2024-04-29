@@ -1,0 +1,86 @@
+.container-fluid {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+  
+  .total-items {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .total-items h4 {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+  }
+  
+  .head-title-text h1 {
+    font-size: 36px;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+
+  .head-title-text h1 span{
+    color: #f36100;
+  }
+  
+  .product-list{
+    color: #fff;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+  }
+  
+  .delete-message{
+    color: green;
+  }
+
+  .card{
+    background-color: #000;
+  }
+
+  .total-items h4{
+    color: #fff;
+  }
+
+  .total-items p{
+    color: #f36100;
+  }
+  
+  .form-group input{
+  border-radius: 0;
+  }
+  
+  .table thead tr th {
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+  }
+  
+  .table tbody td img {
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: auto;
+  }
+  
+  .action-icon {
+    text-align: center;
+  }
+  
+  #Edit {
+    color: blue;
+  }
+  
+  #Delete {
+    color: red;
+    margin-left: 10px;
+  }
+  
+  .pagination{
+    justify-content: right;
+  }
+  

@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="head-title">
+                <h1>Cart</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row product-detail-row">
+        <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+            <div class="products-detail" *ngFor="let item of cartItems">
+                <div class="product-img">
+                    <img src="../../assets/about-us.jpg" alt="">
+                </div>
+                <div class="product-info">
+                    <h4>{{item.name}}</h4>
+                    <h5>{{item.price | currency:"INR"}}</h5>
+                    <div class="product-quantity">
+                        <button (click)="Quantity('min')">-</button>
+                        <input type="text" value="{{productQuantity}}">
+                        <button (click)="Quantity('max')">+</button>
+                      </div>
+                </div>
+                <div class="removeToCart">
+                 <a>Remove</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+            <div class="checkout-detail">
+                <h3>Summary</h3>
+                <div class="Price-Detail">
+                    <p>Product Price:- <span>{{200 | currency: "INR"}}</span></p>
+                    <p>Product Tax:- <span>{{18}}</span></p>
+                    <p>Discount:- <span>{{10 | currency: "INR"}}</span></p>
+                    <p>Delivery Charges:- <span>{{40 | currency: "INR"}}</span></p>
+                    <h5>Total Amount:- <span>{{260 | currency: "INR"}}</span></h5>
+                    <button class="btn checkout">checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

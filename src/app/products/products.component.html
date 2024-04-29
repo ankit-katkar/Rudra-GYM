@@ -1,1 +1,30 @@
-<p>products works!</p>
+<app-header></app-header>
+<div class="products-head">
+  <div class="container-fluid">
+    <div class="head-section">
+      <div class="head-title">
+        <h1>Products</h1>
+      </div>
+      <div class="head-icon">
+        <fa-icon [icon]="faSearch" id="btn"></fa-icon>
+        <fa-icon [icon]="faShoppingBag" id="btn"></fa-icon><span>({{cartItems}})</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="product-list">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-12 productListRow" *ngFor="let list of productList"> 
+        <div class="card" routerLink="/product-detail/{{list._id}}">
+          <div class="card-header">Product Image</div>
+          <div class="card-body">
+            <h4>{{list.name}}</h4>
+            <p>{{list.price | currency:"INR"}}</p>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

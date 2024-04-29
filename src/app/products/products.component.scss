@@ -1,0 +1,56 @@
+.container-fluid{
+    padding: 0%;
+    margin: 0%;
+    overflow: hidden;
+    background-color: #111111;
+
+}
+.head-section{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding: 2% 8% 2% 8%;
+    align-items: center;
+}
+
+.head-title h1{
+    font-weight: 700;
+  font-family: "Oswald", sans-serif;
+font-size: 44px;
+}
+
+.head-icon fa-icon{
+    font-size: 22px;
+    margin-left: 42px;
+}
+ 
+/*------------------------
+    Products
+------------------------*/
+.product-list{
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.productListRow{
+    margin-bottom: 2%;
+}
+
+.card{
+    width: 100%;
+    height: 100%;
+}
+
+.card-header{
+    height: 234px;
+}
+
+.card-body{
+    padding-bottom: 0%;
+}
+
+
+.card-body h4{
+    font-weight: 600;
+    font-size: 18px;
+}

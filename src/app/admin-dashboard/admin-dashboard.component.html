@@ -1,0 +1,75 @@
+<app-admin-header></app-admin-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="head-title-text">
+        <h1>Admin <span>Dashboard</span></h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="product-list">
+            <h2>Product List</h2>
+          </div>
+        </div>
+        <div class="col-lg-4">
+         <div class="delete-message">
+          <p>{{deleteProductMessage}}</p>
+         </div>
+        </div>
+        <div class="col-lg-4">
+          <div>
+            <form>
+              <div class="form-group">
+                <input type="search" [(ngModel)]="searchText" name="search" class="form-control scarch" placeholder="Search Here...">
+   
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Sr No</th>
+                  <th>Image</th>
+                  <th>Product Name</th>
+                  <th>Product Price</th>
+                  <th>Category</th>
+                  <th>Quantity</th>
+                  <th>Description</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let list of ProductsList | filter:searchText | paginate: {itemsPerPage:10, currentPage:page, totalItems:totalLength}; let i = index">
+                  <td>{{i+1}}</td>
+                  <td><img src="{{list.image}}" alt="Product Image"></td>
+                  <td>{{list.name}}</td>
+                  <td>{{list.price | currency:"INR"}}</td>
+                  <td>{{list.category}}</td>
+                  <td>{{list.quantity}}</td>       
+                  <td>{{list.description}}</td>  
+                  <td>
+                    <div class="action-icon">
+                     <a routerLink="/admin-update-product/{{list._id}}"><fa-icon [icon]="faEdit" id="Edit"></fa-icon></a>
+                      <a (click)="deleteProduct(list._id)"><fa-icon [icon]="faTrash" id="Delete"></fa-icon></a>
+                    </div>
+                  </td>
+                </tr>  
+              </tbody>
+            </table>
+          </div>
+        <pagination-controls class="pagination" (pageChange)="page=$event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

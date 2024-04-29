@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row" *ngFor="let product of viewProduct">
+    <div class="col-lg-6">
+      <div class="productImage">
+        <img src="./assets/about-us.jpg" alt="">
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="product-content">
+        <h2 class="productName">{{product.name}}</h2>
+        <h4 class="productPrice">{{product.price | currency:'INR'}}</h4>
+        <div class="product-quantity">
+          <h5>Quantity</h5>
+          <button (click)="Quantity('min')">-</button>
+          <input type="text" value="{{productQuantity}}">
+          <button (click)="Quantity('max')">+</button>
+        </div>
+
+        <div class="addToCart">
+          <button class="btn" (click)="addToCart()">Add To Cart</button>
+        </div>
+
+        <div class="description">
+            <h5>Description:-</h5>
+          <p>{{product.description}}</p> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

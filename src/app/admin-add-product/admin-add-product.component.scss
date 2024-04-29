@@ -1,0 +1,113 @@
+.row {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid #f36100;
+    color: #fff;
+    margin-top: 40px;
+  }
+  
+  .productAddMessage{
+    text-align: center;
+    padding-top: 4%;
+    color: #fff;
+  }
+  .card-body{
+      padding-top: 4%;
+      padding-bottom: 12%;
+  }
+  
+  h2{
+    padding-bottom: 4%;
+      text-align: center;
+    font-family: "Oswald", sans-serif;
+  }
+  
+  .form-group{
+      margin-top: 6%;
+      margin-bottom: 6%;
+  }
+  
+  .form-group input {
+    background-color: #000;
+    color: #fff;
+    border-radius: 0%;
+    border: 1px solid #3d3d3d;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .form-group textarea {
+    background-color: #000;
+    color: #fff;
+    border-radius: 0%;
+    border: 1px solid #3d3d3d;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  
+  .form-control-file{
+    width: 100%;
+    padding-left: 10px;
+    color: #cccccc;
+  }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+  
+  ::placeholder {
+    color: #cccccc;
+    font-size: 14px;
+  }
+  
+  .btn {
+    width: 50%;
+    height: 40px;
+    background-color: #f36100;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 0%;
+    font-size: 14px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+  }
+  
+  @media screen and (max-width:800px) {
+      .card{
+          width: 40%;
+      }
+    .form-group {
+      width: 100%;
+    }
+  
+    .btn {
+      width: 60%;
+      height: 30px;
+    }
+  }
+  
+  @media screen and (max-width:500px) {
+  
+      .card{
+          width: 80%;
+      }
+    .form-group {
+      width: 100%;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  }
+  

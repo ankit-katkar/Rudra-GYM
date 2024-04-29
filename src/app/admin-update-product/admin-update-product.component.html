@@ -1,0 +1,83 @@
+<app-admin-header></app-admin-header>
+
+<div class="container">
+    <div class="row">
+      <p class="productAddMessage">{{updateProductMessage}}</p>
+      <div class="card">
+        <div class="card-body">
+          <h2>Update product</h2>
+          <form [formGroup]="getProduct" class="form" enctype="multipart/form-data">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Product Name" name="Pname"
+                formControlName="name"
+                [ngClass]="{'is-invalid': submitted && f['name'].errors}">
+                <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                  <div *ngIf="f['name'].errors['required']">
+                    Enter Product Name
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Product Price" name="price"
+                formControlName="price"
+                [ngClass]="{'is-invalid': submitted && f['price'].errors}">
+                <div *ngIf="submitted && f['price'].errors" class="invalid-feedback">
+                  <div *ngIf="f['price'].errors['required']">
+                    Enter Product Price
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Product Category" name="category"
+                formControlName="category"
+                [ngClass]="{'is-invalid': submitted && f['category'].errors}">
+                <div *ngIf="submitted && f['category'].errors" class="invalid-feedback">
+                  <div *ngIf="f['category'].errors['required']">
+                    Enter Product Category
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Product Quantity" name="quantity"
+                formControlName="quantity"
+                [ngClass]="{'is-invalid': submitted && f['quantity'].errors}">
+                <div *ngIf="submitted && f['quantity'].errors" class="invalid-feedback">
+                  <div *ngIf="f['quantity'].errors['required']">
+                    Enter Product Quantity
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group"> 
+                <textarea class="form-control" rows="4" placeholder="Product Description" id="description"
+                formControlName="description"
+                [ngClass]="{'is-invalid': submitted && f['description'].errors}">
+              </textarea>
+              <div *ngIf="submitted && f['description'].errors" class="invalid-feedback">
+                <div *ngIf="f['description'].errors['required']">
+                  Enter Product Description
+                </div>
+              </div>
+              
+              </div>
+
+              <div class="form-group">
+                <input type="file" class="form-control-file" name="image" formControlName="image"
+                [ngClass]="{'is-invalid': submitted && f['image'].errors}">
+                <div *ngIf="submitted && f['image'].errors" class="invalid-feedback">
+                  <div *ngIf="f['image'].errors['required']">
+                    Choose Product Image
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn" (click)="update(getProduct.value)">Update Product</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
