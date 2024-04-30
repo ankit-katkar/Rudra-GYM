@@ -33,11 +33,11 @@
             <div class="checkout-detail">
                 <h3>Summary</h3>
                 <div class="Price-Detail">
-                    <p>Product Price:- <span>{{200 | currency: "INR"}}</span></p>
-                    <p>Product Tax:- <span>{{18}}</span></p>
-                    <p>Discount:- <span>{{10 | currency: "INR"}}</span></p>
-                    <p>Delivery Charges:- <span>{{40 | currency: "INR"}}</span></p>
-                    <h5>Total Amount:- <span>{{260 | currency: "INR"}}</span></h5>
+                    <p>Product Price:- <span>{{priceSummary.price | currency: "INR"}}</span></p>
+                    <p>Product Tax:- <span>{{priceSummary.tax}}</span></p>
+                    <p>Discount:- <span>{{priceSummary.discount | currency: "INR"}}</span></p>
+                    <p>Delivery Charges:- <span>{{priceSummary.deliveryCharges | currency: "INR"}}</span></p>
+                    <h5>Total Amount:- <span>{{priceSummary.total | currency: "INR"}}</span></h5>
                     <button class="btn checkout">checkout</button>
                 </div>
             </div>

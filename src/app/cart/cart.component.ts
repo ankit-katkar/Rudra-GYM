@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { RouterLink } from '@angular/router';
 import { CommonModule, CurrencyPipe } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-cart',
@@ -42,16 +41,16 @@ export class CartComponent {
       let data = cardStore && JSON.parse(cardStore)
       this.cartItems = data;
 
-      // let price=0;
-      // cardStore.forEach((item:any)=>{
-      //   if(item.quantity){
-      //     price = price+(+item.price* + item.quantity);
-      //   }      
-      // });
-      // this.priceSummary.price=price;
-      // this.priceSummary.discount=price/10;
-      // this.priceSummary.tax=price/10;
-      // this.priceSummary.deliveryCharges=50;
-      // this.priceSummary.total=price+(price/10)+100-(price/10);
+      let price=0;
+      data.forEach((item:any)=>{
+        if(item.productQuantity){
+          price = price+(+item.price* + item.productQuantity);
+        }      
+      });
+      this.priceSummary.price=price;  
+      this.priceSummary.tax=price/10;
+      this.priceSummary.discount=price/10;
+      this.priceSummary.deliveryCharges=40;
+      this.priceSummary.total=price+(price/10)+40-(price/10);
     }
 }

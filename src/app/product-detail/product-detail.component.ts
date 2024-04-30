@@ -4,7 +4,7 @@ import { HeaderComponent } from '../header/header.component';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Products } from '../dataType';
-import { toArray } from 'rxjs';
+
 
 @Component({
   selector: 'app-product-detail',
@@ -23,9 +23,10 @@ export class ProductDetailComponent {
   ngOnInit(): void {
     let viewProductID: any = this.activatedRoute.snapshot.paramMap.get('_id');
     viewProductID && this.http.get(`http://localhost:5000/product-detail/${viewProductID}`)
-        .pipe(toArray()).subscribe((result) => {
-          console.warn(result);
+        .subscribe((result) => {
           this.viewProduct = result;
+          console.warn(this.viewProduct.name);
+          
         });          
   };  
 
@@ -40,15 +41,18 @@ export class ProductDetailComponent {
 
   addToCart(){
     if(this.viewProduct){
+      this.viewProduct.productQuantity = this.productQuantity;
+      console.warn(this.viewProduct);
+      
       let cartData:any = [];
       let localCart:any = localStorage.getItem('productCart');
       if(!localCart){
-        localStorage.setItem('productCart', JSON.stringify(this.viewProduct));
+        localStorage.setItem('productCart', JSON.stringify([this.viewProduct]));
       }else{
         cartData = JSON.parse(localCart);
         cartData.push(this.viewProduct);
         localStorage.setItem('productCart', JSON.stringify(cartData));
       }
-    }
+    }   
   }
 }
